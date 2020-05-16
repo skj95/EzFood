@@ -1,10 +1,17 @@
 
 {% extends 'base.html' %}
 {% block content %}
-<div class="album py-5">
-    
-    {% if menuItems is  None %}
-        <div class="text-center"> {{errorQuote}}</div>
-    {% endif %} 
-</div>
+<h2 style="width:300px;margin:auto">Available Coupons</h2>
+<table class=table style="width:400px;margin:auto">
+    <tr>
+        <th>CouponKey</th>
+        <th>Price</th>
+    </tr>
+    {% for item in query %}
+    <tr> 
+        <td>{{ item.couponKey }}</td>
+        <td>{{ item.price }}</td>
+    </tr>
+    {% endfor %}
+</table>
 {% endblock content %}

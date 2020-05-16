@@ -116,6 +116,7 @@ def specials(request):
 
 def offers(request):
     data = {'title' : 'New offers'}
+    data['query'] = Coupon.objects.all()
     return render(request,'offers.html',processData(request,data))
 
 def support(request):
